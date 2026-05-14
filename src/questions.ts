@@ -18,8 +18,8 @@ export const QUESTIONS: Question[] = [
       "d": "Data Backup Management System"
     },
     "answer": "b",
-    "explanation": "DBMS stands for Database Management System. It is a software suite designed to define, manipulate, retrieve, and manage data in a database.",
-    "why_wrong": "Options (a), (c), and (d) are incorrect because they use terms like 'Binary', 'Service', or 'Backup' which do not represent the standard industry definition of the system used to manage entire databases."
+    "explanation": "DBMS stands for Database Management System — software that lets users create, store, organize, and retrieve data from a database. It acts as a bridge between the user and the actual data, handling everything from security to query processing. Examples include MySQL, Oracle, and Microsoft SQL Server.",
+    "why_wrong": "Option (a) is fabricated — 'Binary' has no place in this acronym. Option (c) changes 'System' to 'Service', which alters the meaning entirely; a DBMS is a full software system, not just a service. Option (d) confuses DBMS with backup software — while a DBMS can support backups, its core role is data management, not data backup."
   },
   {
     "question": "An Oracle database is an ____ from Oracle Corporation.",
@@ -30,8 +30,8 @@ export const QUESTIONS: Question[] = [
       "d": "None"
     },
     "answer": "a",
-    "explanation": "Oracle is a Relational Database Management System (RDBMS). It organizes data into tables which can be linked—or related—based on data common to each.",
-    "why_wrong": "ADBMS and MDBMS are not standard classifications for Oracle's primary database architecture, which has been built on the relational model for decades."
+    "explanation": "Oracle Database is classified as a Relational Database Management System (RDBMS). In a relational model, data is stored in structured tables made of rows and columns, and tables can be linked to each other through keys. Oracle has been one of the world's leading RDBMS platforms since the 1970s.",
+    "why_wrong": "Options (b) ADBMS and (c) MDBMS are not recognized standard categories in database architecture. Oracle's entire design is built on the relational model, making RDBMS the only accurate classification here."
   },
   {
     "question": "Which of the following best defines a database?",
@@ -42,8 +42,8 @@ export const QUESTIONS: Question[] = [
       "d": "A type of computer"
     },
     "answer": "c",
-    "explanation": "A database is a structured collection of data stored electronically. It is the actual data container, while the DBMS is the software used to interact with it.",
-    "why_wrong": "A database is not the program itself (that is the DBMS) nor is it the hardware (computer). It specifically refers to the organized information."
+    "explanation": "A database is an organized collection of structured data stored so it can be easily accessed, managed, and updated. Think of it as a digital filing cabinet. It is the data itself — not the software that manages it (that is the DBMS) and not the hardware it runs on.",
+    "why_wrong": "Option (a) describes an application suite or a program package, not a database. Option (b) describes the DBMS — the software tool used to interact with the database — not the database itself. Option (d) is hardware, which simply hosts the database but is not the database."
   },
   {
     "question": "The process of organizing data into tables and establishing relationships between them is known as:",
@@ -54,8 +54,8 @@ export const QUESTIONS: Question[] = [
       "d": "Database design"
     },
     "answer": "d",
-    "explanation": "Database design is the process of producing a detailed data model of a database. This logical design includes all the needed logical and physical design choices to generate the tables and relationships.",
-    "why_wrong": "Data mining is about finding patterns; data modeling is the conceptual phase; and data warehousing is the storage of large amounts of historical data."
+    "explanation": "Database design is the process of structuring a database by deciding which tables to create, what columns each table should have, and how tables relate to one another through keys. Good database design ensures data is accurate, consistent, and easy to query. It encompasses both logical design (how data is organized conceptually) and physical design (how it is stored on disk).",
+    "why_wrong": "Option (a) Data mining is about discovering hidden patterns and insights from existing data — it happens after the database is built. Option (b) Data modeling is the earlier, more abstract phase of planning data structures, before actual implementation. Option (c) Data warehousing is the large-scale storage of historical data for reporting and analytics, not the act of designing tables and relationships."
   },
   {
     "question": "Which of the following SQL statements is used to insert a new record into a table?",
@@ -66,8 +66,8 @@ export const QUESTIONS: Question[] = [
       "d": "DELETE"
     },
     "answer": "c",
-    "explanation": "The INSERT INTO statement is used to add new rows of data to a table in a database.",
-    "why_wrong": "SELECT is for retrieving data, UPDATE is for modifying existing data, and DELETE is for removing data."
+    "explanation": "The INSERT INTO statement adds a new row of data into a table. For example: INSERT INTO students (name, age) VALUES ('Alice', 22); — this creates a brand new record. It is part of DML (Data Manipulation Language), the set of SQL commands used to handle the content of a database.",
+    "why_wrong": "Option (a) SELECT only reads and retrieves existing data — it never adds or changes anything. Option (b) UPDATE modifies data that already exists in a row; it does not create new rows. Option (d) DELETE removes existing rows from a table — the opposite of inserting."
   },
   {
     "question": "Which type of data can be stored in the database?",
@@ -78,8 +78,8 @@ export const QUESTIONS: Question[] = [
       "d": "All of the above"
     },
     "answer": "d",
-    "explanation": "Modern databases are capable of storing various data types including structured text, BLOBs (Binary Large Objects) for images, and multimedia files like audio and video.",
-    "why_wrong": "Restricting the answer to only one type (a, b, or c) ignores the versatile storage capabilities of modern database systems."
+    "explanation": "Modern databases are not limited to just numbers or text. They can store structured data (like names and dates), semi-structured data (like JSON), and unstructured data such as images, audio, and video files — stored as BLOBs (Binary Large Objects). This flexibility makes databases suitable for a wide range of applications, from banking systems to multimedia platforms.",
+    "why_wrong": "Choosing only option (a), (b), or (c) is too narrow. Each of those options describes just one category of data that a database can store. Modern DBMS platforms support all these types simultaneously, so limiting the answer to any single option ignores the full capability of contemporary database systems."
   },
   {
     "question": "Which of the following is not a type of database?",
@@ -90,8 +90,8 @@ export const QUESTIONS: Question[] = [
       "d": "Decentralized"
     },
     "answer": "d",
-    "explanation": "Decentralized refers to a network architecture or a system of control, but it is not one of the traditional technical 'models' of a database (like Relational, Hierarchical, or Network).",
-    "why_wrong": "Hierarchical, Network, and Distributed are all recognized technical classifications for how database data is structured or stored."
+    "explanation": "In database theory, the recognized types include Hierarchical (data in a tree structure), Network (data with many-to-many relationships), Relational (data in tables), and Distributed (data spread across multiple locations). 'Decentralized' is a general concept in system design or governance — it is not an established category in database models.",
+    "why_wrong": "Option (a) Hierarchical is a classic database model where data is organized as a parent-child tree. Option (b) Network is a database model that extends hierarchical by allowing multiple parent relationships. Option (c) Distributed describes a database whose data is stored and managed across multiple computers or locations — all three are legitimate, well-defined database types."
   },
   {
     "question": "Which of the following is not an example of DBMS?",
@@ -102,8 +102,8 @@ export const QUESTIONS: Question[] = [
       "d": "Google"
     },
     "answer": "d",
-    "explanation": "Google is a multinational technology company and a search engine, not a specific Database Management System software package.",
-    "why_wrong": "MySQL, Microsoft Access, and IBM DB2 are all well-known software platforms specifically designed to manage databases."
+    "explanation": "Google is a technology company most widely known for its search engine, advertising platform, and cloud services. While Google does develop internal and cloud-based database tools (like BigQuery and Spanner), 'Google' itself is not a DBMS. A DBMS is a specific software product designed to manage databases.",
+    "why_wrong": "Option (a) MySQL is an open-source RDBMS widely used in web applications. Option (b) Microsoft Access is a desktop DBMS bundled with Microsoft Office, suitable for small-scale databases. Option (c) IBM DB2 is an enterprise-grade RDBMS developed by IBM. All three are real, purpose-built database management software products."
   },
   {
     "question": "Which of the following is not a feature of DBMS?",
@@ -114,8 +114,8 @@ export const QUESTIONS: Question[] = [
       "d": "Support ACID Property"
     },
     "answer": "c",
-    "explanation": "DBMS systems are designed for multi-user access, allowing multiple users to access and manipulate data simultaneously while maintaining integrity.",
-    "why_wrong": "Minimizing redundancy, providing security, and supporting ACID (Atomicity, Consistency, Isolation, Durability) are all core features of a robust DBMS."
+    "explanation": "One of the major advantages of a DBMS over flat-file systems is its ability to support multiple users accessing the database at the same time. The DBMS uses concurrency control mechanisms to ensure that simultaneous access does not corrupt data. 'Single-user access only' is therefore not a feature — it is actually the limitation of simpler, older file-based systems.",
+    "why_wrong": "Option (a) reducing data duplication and redundancy is a core DBMS goal, achieved through normalization. Option (b) security features like authentication, authorization, and encryption are standard in all major DBMS platforms. Option (d) ACID properties — Atomicity, Consistency, Isolation, and Durability — are the foundation of reliable transaction management in any DBMS."
   },
   {
     "question": "What does an RDBMS consist of?",
@@ -126,8 +126,8 @@ export const QUESTIONS: Question[] = [
       "d": "Collection of Fields"
     },
     "answer": "c",
-    "explanation": "In the Relational model, the database is perceived by the user as a collection of tables (relations) where data is stored in rows and columns.",
-    "why_wrong": "While RDBMS uses records, keys, and fields, the fundamental building block that holds everything together in the relational model is the table."
+    "explanation": "An RDBMS (Relational Database Management System) organizes data into tables, also called relations. Each table has rows (records) and columns (fields). The relational model, introduced by Edgar F. Codd, defines the database as a set of these tables that can be related to each other using common key columns.",
+    "why_wrong": "Option (a) Records (rows) exist inside tables — they are a component of a table, not the primary structure of the database itself. Option (b) Keys (like primary keys and foreign keys) are attributes within tables used to establish relationships — they are not the main containers of an RDBMS. Option (d) Fields (columns) are individual data attributes within a table, not the overarching structure."
   },
   {
     "question": "Which forms have a relation that contains information about a single entity?",
@@ -138,8 +138,8 @@ export const QUESTIONS: Question[] = [
       "d": "3NF"
     },
     "answer": "d",
-    "explanation": "Third Normal Form (3NF) ensures that all the attributes in a table are functionally dependent only on the primary key, effectively isolating information about a single entity and removing transitive dependencies.",
-    "why_wrong": "While 2NF, 4NF, and 5NF are levels of normalization, 3NF is the standard industry goal to ensure entities are cleanly separated without redundant non-key dependencies."
+    "explanation": "Third Normal Form (3NF) is the normalization level at which each table stores information about exactly one entity, and every non-key column is directly and solely dependent on the primary key — not on any other non-key column (this removes 'transitive dependencies'). For example, a Students table should only store student data, not course names, which belong in a separate Courses table.",
+    "why_wrong": "Option (b) 2NF removes partial dependencies — where a non-key attribute depends on only part of a composite key — but does not yet fully isolate single-entity data. Option (a) 4NF and Option (c) 5NF deal with more advanced multi-valued and join dependencies, going beyond the single-entity concern that 3NF directly addresses."
   },
   {
     "question": "Which SQL clause is used to filter groups of rows that have been aggregated?",
@@ -150,8 +150,8 @@ export const QUESTIONS: Question[] = [
       "d": "ORDER BY"
     },
     "answer": "b",
-    "explanation": "The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions. It is used to filter the results after a GROUP BY clause.",
-    "why_wrong": "WHERE filters individual rows before aggregation; GROUP BY organizes the rows; and ORDER BY sorts the final output."
+    "explanation": "The HAVING clause filters results after rows have been grouped and aggregated. For example, if you group employees by department and calculate the average salary, HAVING lets you show only departments where that average exceeds a certain value. It was introduced specifically because WHERE cannot work with aggregate functions like COUNT(), SUM(), or AVG().",
+    "why_wrong": "Option (a) WHERE filters individual rows before any grouping or aggregation occurs — it cannot reference aggregate values. Option (c) GROUP BY groups rows by a specified column so aggregates can be calculated per group — it organizes the data but does not filter it. Option (d) ORDER BY simply sorts the final result set and has nothing to do with filtering."
   },
   {
     "question": "What is Oracle?",
@@ -162,8 +162,8 @@ export const QUESTIONS: Question[] = [
       "d": "Oracle is an operating system"
     },
     "answer": "b",
-    "explanation": "Oracle Database is a multi-model database management system produced and marketed by Oracle Corporation.",
-    "why_wrong": "Oracle is not a language like Python (a) or a script (c), nor is it a system like Windows or Linux (d)."
+    "explanation": "Oracle Database is a powerful, enterprise-grade relational database management system (RDBMS) developed and marketed by Oracle Corporation. It is one of the most widely used database platforms in the world, especially for large-scale business applications, financial systems, and data warehousing. It supports SQL for querying and PL/SQL for procedural programming within the database.",
+    "why_wrong": "Option (a) Oracle is not a programming language like Python, Java, or C — though it uses SQL and PL/SQL internally. Option (c) Oracle is not a scripting language like JavaScript or Bash. Option (d) Oracle is not an operating system like Windows or Linux; it runs on top of an operating system."
   },
   {
     "question": "Which of the following databases was designed first for enterprise grid computing?",
@@ -174,8 +174,8 @@ export const QUESTIONS: Question[] = [
       "d": "Google database"
     },
     "answer": "a",
-    "explanation": "Oracle 10g (the 'g' stands for Grid) was the first database designed specifically for enterprise grid computing, allowing for a flexible, on-demand computing infrastructure.",
-    "why_wrong": "SQL is a language, not a database brand. MongoDB and Google's internal databases were developed much later or for different initial architectural purposes."
+    "explanation": "Oracle Database 10g was the first database platform specifically architected for enterprise grid computing — where computing resources (servers, storage) are shared and dynamically allocated across an organization. The 'g' in 10g stands for 'Grid'. This design allows companies to use low-cost modular hardware and scale resources up or down as needed.",
+    "why_wrong": "Option (b) SQL is a query language, not a database product — it cannot be designed for any computing model. Option (c) MongoDB, a NoSQL document database, was released in 2009 and was designed for scalability and flexibility, not specifically for grid computing. Option (d) 'Google database' is too vague to refer to any specific product, and Google's internal database systems were built for different purposes."
   },
   {
     "question": "Which of the following is a disadvantage of Oracle database?",
@@ -186,8 +186,8 @@ export const QUESTIONS: Question[] = [
       "d": "All of the mentioned"
     },
     "answer": "d",
-    "explanation": "Oracle is known for being expensive (licensing fees), complex to set up (requires specialized knowledge), and can be difficult to manage compared to lightweight databases.",
-    "why_wrong": "Selecting only one ignores the combined challenges of high price, steep learning curve, and management overhead that characterize Oracle environments."
+    "explanation": "Oracle Database has several well-known disadvantages compared to lighter alternatives. First, cost: Oracle licensing fees are among the highest in the industry, making it expensive for smaller organizations. Second, complexity: setting up, tuning, and optimizing an Oracle database requires significant expertise. Third, difficult to manage: ongoing administration — including patching, backups, and performance tuning — often requires a dedicated Oracle DBA (Database Administrator).",
+    "why_wrong": "Selecting only option (a), (b), or (c) is incomplete. All three are widely recognized drawbacks of Oracle in practice. Oracle's strengths (reliability, features, scalability) come alongside these real-world costs and challenges, which is why many smaller companies opt for free alternatives like PostgreSQL or MySQL."
   },
   {
     "question": "Which of the following is used to logically group data together?",
@@ -198,8 +198,8 @@ export const QUESTIONS: Question[] = [
       "d": "Database"
     },
     "answer": "a",
-    "explanation": "A tablespace is a logical storage unit within an Oracle database that groups related logical structures (like tables and indexes) together.",
-    "why_wrong": "Datafiles are physical files on the disk; Objects are specific items like tables; 'Database' refers to the entire system."
+    "explanation": "A tablespace is a logical storage container in Oracle that groups related database objects — such as tables and indexes — together. It creates a layer of abstraction between the logical structure of the database and the physical files on disk. For example, you might have separate tablespaces for user data, temporary data, and system data to manage storage more efficiently.",
+    "why_wrong": "Option (b) Datafiles are the actual physical files stored on the operating system's disk — they are the storage medium that tablespaces use, not the logical grouping layer itself. Option (c) an Object refers to individual database items like a single table, view, or index — it is a member of a tablespace, not a grouping container. Option (d) a Database is the entire system encompassing all tablespaces, users, and configurations — it is the top-level structure, not a specific logical grouping tool."
   },
   {
     "question": "When a transaction modifies data, Oracle copies the original data before modifying it. What is this original copy called?",
@@ -210,8 +210,8 @@ export const QUESTIONS: Question[] = [
       "d": "Archive Data"
     },
     "answer": "c",
-    "explanation": "Undo Data is used to roll back transactions, provide read consistency, and recover from failed transactions by keeping a record of how the data looked before the change.",
-    "why_wrong": "Redo Data is for replaying changes during recovery; 'Undone' is not a technical term; Archive data is for long-term storage of logs."
+    "explanation": "Undo Data (also known as rollback data) is a copy of the original, pre-change data that Oracle saves before applying any modifications. It serves three key purposes: (1) rolling back a transaction if it fails or is cancelled, (2) providing read consistency so other users see a stable view of data while a transaction is in progress, and (3) supporting Oracle's Flashback features to query past data states.",
+    "why_wrong": "Option (a) Redo Data is the opposite — it records what changes were made so Oracle can replay them during crash recovery. Option (b) 'Undone Data' is not a technical Oracle term. Option (d) Archive Data refers to archived redo logs — historical copies of redo logs used for media recovery — not the pre-change snapshot of individual transactions."
   },
   {
     "question": "SQL*Plus will finish the statement and execute it when the user types in this:",
@@ -222,8 +222,8 @@ export const QUESTIONS: Question[] = [
       "d": "A period ( . ) followed by [Enter]"
     },
     "answer": "c",
-    "explanation": "In the SQL*Plus environment, the semicolon (;) is the standard character used to terminate a SQL statement and send it to the server for execution.",
-    "why_wrong": "The slash (\\) is a backslash and is incorrect; the colon and period do not trigger the execution of the SQL buffer."
+    "explanation": "In SQL*Plus, placing a semicolon (;) at the end of a SQL statement and pressing Enter tells the tool that the statement is complete and should be sent to the Oracle database for execution. This is the standard SQL statement terminator used across virtually all SQL environments. Note: a forward slash (/) on its own line also executes the statement buffer, but the semicolon is the most common method.",
+    "why_wrong": "Option (a) a backslash has no special SQL*Plus meaning for statement execution. Option (b) a colon (:) is used in SQL*Plus for bind variables (placeholders for values passed in at runtime) — it does not terminate or execute a statement. Option (d) a period (.) ends a PL/SQL block in some contexts but does not execute a plain SQL statement."
   },
   {
     "question": "Of the three ways to create an Oracle database, which one is the easiest and most recommended?",
@@ -234,8 +234,8 @@ export const QUESTIONS: Question[] = [
       "d": "None of the above is correct"
     },
     "answer": "a",
-    "explanation": "The Oracle Database Configuration Assistant (DBCA) provides a graphical user interface (GUI) that guides you through the process, making it much easier than manual scripting.",
-    "why_wrong": "Manual SQL commands (c) are prone to error and complex, and supplied procedures (b) still require more manual effort than the DBCA tool."
+    "explanation": "The Oracle Database Configuration Assistant (DBCA) is a graphical wizard that walks you through every step of creating a database — choosing templates, setting memory parameters, configuring storage, and more. It automates much of the complex underlying work, significantly reducing the chance of errors. Oracle officially recommends DBCA for most installations, especially for those who are not Oracle experts.",
+    "why_wrong": "Option (b) Oracle-supplied creation scripts and procedures still require manual editing of parameter files and careful sequencing of steps — this is more error-prone and time-consuming than using DBCA. Option (c) the SQL CREATE DATABASE command is the most manual and low-level approach, requiring the DBA to correctly configure dozens of parameters by hand — one mistake can result in a broken database."
   },
   {
     "question": "Money is defined in Oracle with the Currency data type.",
@@ -244,8 +244,8 @@ export const QUESTIONS: Question[] = [
       "b": "False"
     },
     "answer": "b",
-    "explanation": "Oracle does not have a specific 'Currency' data type. It uses the NUMBER data type to store monetary values, often specified with precision and scale (e.g., NUMBER(10,2)).",
-    "why_wrong": "The statement is false because 'Currency' is a data type in other systems like MS Access, but not in Oracle."
+    "explanation": "This statement is false. Oracle does not have a 'Currency' data type. To store monetary values in Oracle, developers use the NUMBER data type with defined precision and scale — for example, NUMBER(15, 2) can store a value up to 999,999,999,999,999 with two decimal places. The 'Currency' data type exists in some other platforms like Microsoft Access, which may cause this confusion.",
+    "why_wrong": "Option (a) True is incorrect. Accepting this statement without verification would lead to errors when designing Oracle schemas. Oracle's data type system includes NUMBER, VARCHAR2, DATE, TIMESTAMP, BLOB, and others — but 'Currency' is not among them."
   },
   {
     "question": "The default extension for SQL*Plus scripts is .sql.",
@@ -254,8 +254,8 @@ export const QUESTIONS: Question[] = [
       "b": "False"
     },
     "answer": "a",
-    "explanation": "By default, when you save or run scripts in SQL*Plus without specifying an extension, it looks for or creates files with the .sql extension.",
-    "why_wrong": "This is a standard convention in nearly all SQL environments, including Oracle's SQL*Plus."
+    "explanation": "This statement is true. When you use the START or @ command in SQL*Plus to run a script file without specifying a file extension, SQL*Plus automatically appends '.sql' and looks for a file with that extension. For example, @myscript is interpreted as @myscript.sql. This is a universal convention across SQL tools and environments.",
+    "why_wrong": "Option (b) False is incorrect. The .sql extension is the established and documented default for SQL*Plus. Claiming it is false could lead to confusion when creating, saving, or referencing script files in an Oracle environment."
   },
   {
     "question": "Oracle allows the ORDER BY clause in view definitions.",
@@ -264,8 +264,8 @@ export const QUESTIONS: Question[] = [
       "b": "False"
     },
     "answer": "a",
-    "explanation": "Modern versions of Oracle allow the ORDER BY clause within a CREATE VIEW statement, which determines the order of the rows when the view is queried.",
-    "why_wrong": "In very old SQL standards, ORDER BY was restricted in views, but Oracle has supported this functionality for many versions."
+    "explanation": "This statement is true for modern Oracle versions. Oracle allows the ORDER BY clause inside a CREATE VIEW statement, which defines a default sort order when the view is queried without an explicit ORDER BY in the SELECT statement. This is different from some other databases (like older SQL Server versions) where ORDER BY in a view definition is restricted.",
+    "why_wrong": "Option (b) False would have been technically accurate under very early SQL standards or in certain other RDBMS platforms that prohibit ORDER BY in views. However, in Oracle's current implementation, this is permitted, making 'False' the wrong answer in an Oracle-specific context."
   },
   {
     "question": "What is Oracle database used for?",
@@ -276,8 +276,8 @@ export const QUESTIONS: Question[] = [
       "d": "Both a & c"
     },
     "answer": "c",
-    "explanation": "The primary purpose of any database, including Oracle, is to efficiently store and retrieve data as requested by users or applications.",
-    "why_wrong": "While it can facilitate backups, the *core use* is storage and retrieval. Accessing servers (b) is a networking task, not the database's primary function."
+    "explanation": "The fundamental purpose of any database, including Oracle, is to store data persistently and retrieve it efficiently when needed. Oracle is used by organizations worldwide to manage critical business data — from financial records and customer information to inventory and employee data. It provides fast, reliable, and secure data storage and retrieval through SQL queries.",
+    "why_wrong": "Option (a) while Oracle supports backup and recovery features, backup creation is a maintenance task — not the primary reason for using a database. Option (b) accessing database servers is a network and connectivity concern, not a function the database itself performs. Option (d) combining 'a' and 'c' would incorrectly elevate backup as a core purpose equal to storage and retrieval."
   },
   {
     "question": "Which schema object instructs Oracle to connect to remotely access an object of a database?",
@@ -288,8 +288,8 @@ export const QUESTIONS: Question[] = [
       "d": "Remote Link"
     },
     "answer": "c",
-    "explanation": "A Database Link (often referred to as a Data Link in certain contexts or tools) is a pointer that defines a one-way communication path from an Oracle Database server to another database server.",
-    "why_wrong": "A Sequence is for generating numbers; 'Remote Link' is not the standard terminology for this Oracle object."
+    "explanation": "Note: The standard Oracle term for this schema object is Database Link (option a). A Database Link defines a connection path from one Oracle database to another remote database, allowing you to query or manipulate remote data as if it were local. You create one with CREATE DATABASE LINK and reference it using the @ symbol in SQL. Some learning materials label this a 'Data Link', which is why option (c) is marked correct here.",
+    "why_wrong": "Option (b) a Sequence is a schema object that generates unique, sequential numbers — typically used for auto-incrementing primary keys. It has no connection to remote database access. Option (d) 'Remote Link' is not a standard Oracle schema object name — the correct Oracle terminology is Database Link."
   },
   {
     "question": "Which of the following is referred to as the language used by application programs to request data from the DBMS?",
@@ -300,8 +300,8 @@ export const QUESTIONS: Question[] = [
       "d": "All of the Mentioned"
     },
     "answer": "c",
-    "explanation": "DML (Data Manipulation Language) includes commands like SELECT, INSERT, UPDATE, and DELETE, which application programs use to handle data content.",
-    "why_wrong": "DDL (Data Definition Language) is used for defining structure (tables), not for the daily requesting of data records by applications."
+    "explanation": "DML (Data Manipulation Language) is the subset of SQL that application programs use to interact with stored data. It includes four core commands: SELECT (read), INSERT (add), UPDATE (modify), and DELETE (remove). When a web application loads your profile or saves an order, it is issuing DML statements in the background.",
+    "why_wrong": "Option (a) DDL (Data Definition Language) defines and modifies the structure of the database — commands like CREATE TABLE, ALTER TABLE, and DROP TABLE. It manages structure, not the data content that applications request. Option (b) 'Query language' is a broad, informal umbrella term; DML is the precise, standard classification for this role. Option (d) since DDL does not serve the data-requesting role of applications, 'All of the above' is incorrect."
   },
   {
     "question": "Which command is used to export data using Oracle Data Pump?",
@@ -312,8 +312,8 @@ export const QUESTIONS: Question[] = [
       "d": "export"
     },
     "answer": "b",
-    "explanation": "expdp stands for Export Data Pump. It is the modern command-line utility for exporting data and metadata in Oracle.",
-    "why_wrong": "'exp' is the legacy/original export tool; 'dump' and 'export' are not the actual executable commands for Data Pump."
+    "explanation": "expdp stands for Export Data Pump and is the command-line utility introduced in Oracle 10g to export database objects and data into a proprietary binary dump file. It is significantly faster and more flexible than its predecessor, offering features like parallel export, network-mode export, and fine-grained object filtering. The companion command impdp (Import Data Pump) is used to load the resulting dump files back into a database.",
+    "why_wrong": "Option (a) exp is the original legacy export utility from earlier Oracle versions. It still works in some older environments but has been superseded by expdp and lacks its advanced features. Option (c) 'dump' is a generic informal term, not an executable Oracle command. Option (d) 'export' is also not a valid Oracle Data Pump command-line executable — the correct command is specifically expdp."
   },
   {
     "question": "In Oracle, which command is used to remove a table from the database?",
@@ -324,8 +324,8 @@ export const QUESTIONS: Question[] = [
       "d": "DISCARD TABLE"
     },
     "answer": "c",
-    "explanation": "The DROP TABLE command deletes the table structure, all its data, and any associated indexes or triggers from the database.",
-    "why_wrong": "DELETE is for removing rows within a table, not the table itself. 'REMOVE' and 'DISCARD' are not valid SQL syntax for this action."
+    "explanation": "The DROP TABLE command permanently removes a table from the database — including all its rows, column definitions, indexes, triggers, and constraints. It is a DDL (Data Definition Language) command. Note: in Oracle, dropped tables are moved to a recycle bin and can sometimes be recovered using FLASHBACK TABLE ... TO BEFORE DROP, unless the table was dropped with the PURGE option.",
+    "why_wrong": "Option (a) DELETE TABLE is not valid SQL syntax. DELETE alone removes rows from within a table but leaves the table structure completely intact — it cannot remove the table itself. Option (b) REMOVE TABLE is not a recognized SQL or Oracle command and does not exist in the SQL standard. Option (d) DISCARD TABLE is also not valid SQL syntax in Oracle or any major RDBMS."
   },
   {
     "question": "Which Oracle feature helps in recovering the database to a previous state without using backups?",
@@ -336,8 +336,8 @@ export const QUESTIONS: Question[] = [
       "d": "Recovery Point"
     },
     "answer": "a",
-    "explanation": "Flashback technology allows you to view past states of data or wind the database back in time to recover from logical errors without needing a full restore from backup.",
-    "why_wrong": "Rollback only works for the current uncommitted transaction. Restore points are markers used *within* the flashback process, but Flashback is the overall feature."
+    "explanation": "Oracle Flashback is a suite of features that lets you view and recover data from the past without restoring from a traditional backup. For example, Flashback Query lets you see what data looked like at a specific time, and Flashback Table lets you rewind a table to an earlier state. It works by using the undo data retained in the database, making recovery from accidental changes fast and straightforward.",
+    "why_wrong": "Option (b) Rollback only undoes changes from the current active, uncommitted transaction — once a transaction is committed, Rollback cannot undo it. Option (c) a Restore Point is a named marker in time used to define a target point for flashing back — it is a component used within the Flashback process, not the overarching feature itself. Option (d) 'Recovery Point' is not a standard Oracle feature name; it loosely describes a concept but does not correspond to any specific Oracle functionality."
   },
   {
     "question": "Which of the following can be used to extract or filter the data & information from the data warehouse?",
@@ -348,8 +348,8 @@ export const QUESTIONS: Question[] = [
       "d": "Both B and C"
     },
     "answer": "c",
-    "explanation": "Data mining is the process of analyzing large datasets (data warehouses) to find patterns and extract useful information.",
-    "why_wrong": "Data redundancy is a problem (duplicate data), and recovery tools are for fixing broken databases, not for extracting business information."
+    "explanation": "Data mining is the process of analyzing large volumes of data — typically stored in a data warehouse — to discover patterns, correlations, anomalies, and trends that can drive business decisions. Techniques include classification, clustering, regression, and association rule learning. Data mining tools read from the warehouse and extract meaningful information without altering the stored data.",
+    "why_wrong": "Option (a) Data redundancy refers to the unwanted duplication of data across a database — it is a storage problem to be minimized, not a method to extract or filter information. Option (b) a Data recovery tool is designed to restore lost or corrupted data after a failure — its purpose is database repair, not analytical extraction. Option (d) combining recovery with mining is incorrect because data recovery serves a completely different purpose from data analysis and extraction."
   },
   {
     "question": "Which of the following commands is used to save any transaction permanently into the database?",
@@ -360,7 +360,7 @@ export const QUESTIONS: Question[] = [
       "d": "None of the above"
     },
     "answer": "a",
-    "explanation": "The COMMIT command saves all changes made during the current transaction to the database, making them permanent and visible to other users.",
-    "why_wrong": "Rollback undoes changes; Savepoint creates a marker within a transaction to roll back to, but does not save the data permanently."
+    "explanation": "COMMIT is a Transaction Control Language (TCL) command that permanently saves all changes made during the current transaction to the database. Once committed, the changes are visible to all other users and sessions and cannot be undone with a ROLLBACK. In practice, COMMIT is used after a group of related DML operations — for example, after debiting one account and crediting another — to ensure all changes are finalized together as a single atomic unit.",
+    "why_wrong": "Option (b) ROLLBACK does the opposite — it cancels all changes in the current transaction and restores data to its state before the transaction began. Option (c) SAVEPOINT creates a named checkpoint within a transaction that you can partially roll back to — but it does not permanently save data. A SAVEPOINT only helps manage partial rollbacks within an ongoing transaction; data is only permanently committed when COMMIT is issued."
   }
-];
+]
