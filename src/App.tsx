@@ -200,7 +200,7 @@ const ResultsView = ({ score, total, onRestart }: { score: number; total: number
   const gradeColor = pct >= 80 ? '#CCFF00' : pct >= 60 ? '#00F5FF' : '#FF3366';
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ background: '#0F0F1A' }}>
+    <div className="min-h-screen w-full flex items-center justify-center p-4" style={{ background: '#0F0F1A' }}>
       <FontLoader />
       <Scanlines />
       <Grain />
@@ -341,8 +341,6 @@ export default function App() {
     if (currentIndex === 0) return;
     const prevIndex = currentIndex - 1;
     const savedPrev = answerHistory[prevIndex];
-    // If current question was answered but going back, deduct score for current if it was correct
-    // (score tracks only committed answers; back just navigates, no score change)
     setCurrentIndex(prevIndex);
     setSelectedOption(savedPrev?.selected ?? null);
     setIsAnswered(savedPrev?.answered ?? false);
@@ -354,7 +352,7 @@ export default function App() {
   const accuracy = answeredCount === 0 ? 0 : Math.round((score / answeredCount) * 100);
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ background: '#0F0F1A', fontFamily: "'Space Mono', monospace" }}>
+    <div className="min-h-screen w-full flex flex-col overflow-x-hidden" style={{ background: '#0F0F1A', fontFamily: "'Space Mono', monospace" }}>
       <FontLoader />
       <Scanlines />
       <Grain />
@@ -373,13 +371,13 @@ export default function App() {
       {/* ── HEADER ── */}
       <header
         ref={headerRef}
-        className="relative z-10 flex items-center justify-between px-5 sm:px-8 lg:px-12 py-4 shrink-0"
+        className="relative z-10 w-full flex items-center justify-between px-4 sm:px-8 lg:px-12 py-4 shrink-0"
         style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
         {/* Logo */}
         <div className="flex items-center gap-3">
           <div
-            className="w-8 h-8 flex items-center justify-center rounded text-xs font-black"
+            className="w-8 h-8 flex items-center justify-center rounded text-xs font-black shrink-0"
             style={{ background: '#CCFF00', color: '#0F0F1A' }}
           >DB</div>
           <div className="hidden sm:block">
@@ -413,7 +411,7 @@ export default function App() {
       </header>
 
       {/* Mobile progress */}
-      <div className="sm:hidden px-5 pt-3 relative z-10">
+      <div className="sm:hidden w-full px-4 pt-3 relative z-10">
         <div className="h-0.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
           <motion.div className="h-full rounded-full" style={{ background: '#CCFF00', boxShadow: '0 0 10px #CCFF00' }} animate={{ width: `${progress}%` }} transition={{ duration: 0.6, ease: 'easeOut' }} />
         </div>
@@ -424,10 +422,10 @@ export default function App() {
       </div>
 
       {/* ── MAIN ── */}
-      <main className="flex-1 relative z-10 flex flex-col lg:flex-row gap-6 xl:gap-10 px-5 sm:px-8 lg:px-12 py-6 sm:py-10 max-w-7xl mx-auto w-full">
+      <main className="flex-1 relative z-10 w-full flex flex-col lg:flex-row gap-6 xl:gap-10 px-4 sm:px-8 lg:px-12 py-6 sm:py-10 max-w-7xl mx-auto">
 
         {/* LEFT: Question + Options */}
-        <div className="flex-1 flex flex-col gap-5 min-w-0">
+        <div className="flex-1 flex flex-col gap-5 min-w-0 w-full">
 
           {/* Q Number badge + back button */}
           <motion.div
@@ -469,7 +467,7 @@ export default function App() {
             >
               QUERY_{String(currentIndex + 1).padStart(2, '0')}
             </span>
-            <div className="flex gap-1">
+            <div className="flex gap-1 flex-wrap">
               {QUESTIONS.map((_, i) => (
                 <div key={i} className="w-4 h-1 rounded-full transition-all duration-300"
                   style={{
@@ -485,7 +483,7 @@ export default function App() {
           {/* Question card */}
           <div
             ref={questionRef}
-            className="relative p-6 sm:p-8 rounded-xl"
+            className="relative p-6 sm:p-8 rounded-xl w-full"
             style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)' }}
           >
             <CornerBrackets color="rgba(0,245,255,0.3)" size={14} />
@@ -498,7 +496,7 @@ export default function App() {
           </div>
 
           {/* Options */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 w-full">
             {Object.entries(q.options).map(([key, val], i) => (
               <OptionButton
                 key={`${currentIndex}-${key}`}
@@ -647,7 +645,7 @@ export default function App() {
 
       {/* ── FOOTER ── */}
       <footer
-        className="relative z-10 px-5 sm:px-8 lg:px-12 py-4 flex items-center justify-between shrink-0"
+        className="relative z-10 w-full px-4 sm:px-8 lg:px-12 py-4 flex items-center justify-between shrink-0"
         style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}
       >
         <div className="flex items-center gap-2">
