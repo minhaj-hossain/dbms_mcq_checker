@@ -2,45 +2,46 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { gsap } from 'gsap';
 import { CheckCircle2, XCircle, ArrowRight, RotateCcw, Trophy, Zap } from 'lucide-react';
+import { QUESTIONS } from './questions';
 
 // ─── INLINE QUESTIONS (replace with your import) ──────────────────────────────
-const QUESTIONS = [
-  {
-    question: "What is the full form of DBMS?",
-    options: { a: "Data of Binary Management System", b: "Database Management System", c: "Database Management Service", d: "Data Backup Management System" },
-    answer: "b",
-    explanation: "DBMS stands for Database Management System — software that lets users create, store, organize, and retrieve data. Examples include MySQL, Oracle, and Microsoft SQL Server.",
-    why_wrong: "Option (a) is fabricated. Option (c) changes 'System' to 'Service'. Option (d) confuses DBMS with backup software — its core role is data management, not backup."
-  },
-  {
-    question: "An Oracle database is an ____ from Oracle Corporation.",
-    options: { a: "RDBMS", b: "ADBMS", c: "MDBMS", d: "None" },
-    answer: "a",
-    explanation: "Oracle Database is a Relational Database Management System (RDBMS). Data is stored in structured tables with rows and columns, linked by keys.",
-    why_wrong: "ADBMS and MDBMS are not standard database classifications. Oracle's design is purely relational."
-  },
-  {
-    question: "Which of the following best defines a database?",
-    options: { a: "A collection of programs", b: "A type of software", c: "A collection of data", d: "A type of computer" },
-    answer: "c",
-    explanation: "A database is an organized collection of structured data — like a digital filing cabinet. It is the data itself, not the software or hardware.",
-    why_wrong: "Option (a) describes an application suite. Option (b) describes the DBMS software, not the database. Option (d) is hardware that hosts a database."
-  },
-  {
-    question: "Which SQL clause is used to filter groups of rows that have been aggregated?",
-    options: { a: "WHERE", b: "HAVING", c: "GROUP BY", d: "ORDER BY" },
-    answer: "b",
-    explanation: "HAVING filters results after aggregation. It was added because WHERE cannot work with aggregate functions like COUNT(), SUM(), or AVG().",
-    why_wrong: "WHERE filters rows before aggregation. GROUP BY organizes rows. ORDER BY only sorts the final output — none of them can filter aggregated groups."
-  },
-  {
-    question: "Which of the following is not an example of DBMS?",
-    options: { a: "MySQL", b: "Microsoft Access", c: "IBM DB2", d: "Google" },
-    answer: "d",
-    explanation: "Google is a technology company and search engine, not a DBMS. While Google builds cloud database tools, 'Google' itself is not a database management system.",
-    why_wrong: "MySQL, Microsoft Access, and IBM DB2 are all real, purpose-built database management software products."
-  }
-];
+// const QUESTIONS = [
+//   {
+//     question: "What is the full form of DBMS?",
+//     options: { a: "Data of Binary Management System", b: "Database Management System", c: "Database Management Service", d: "Data Backup Management System" },
+//     answer: "b",
+//     explanation: "DBMS stands for Database Management System — software that lets users create, store, organize, and retrieve data. Examples include MySQL, Oracle, and Microsoft SQL Server.",
+//     why_wrong: "Option (a) is fabricated. Option (c) changes 'System' to 'Service'. Option (d) confuses DBMS with backup software — its core role is data management, not backup."
+//   },
+//   {
+//     question: "An Oracle database is an ____ from Oracle Corporation.",
+//     options: { a: "RDBMS", b: "ADBMS", c: "MDBMS", d: "None" },
+//     answer: "a",
+//     explanation: "Oracle Database is a Relational Database Management System (RDBMS). Data is stored in structured tables with rows and columns, linked by keys.",
+//     why_wrong: "ADBMS and MDBMS are not standard database classifications. Oracle's design is purely relational."
+//   },
+//   {
+//     question: "Which of the following best defines a database?",
+//     options: { a: "A collection of programs", b: "A type of software", c: "A collection of data", d: "A type of computer" },
+//     answer: "c",
+//     explanation: "A database is an organized collection of structured data — like a digital filing cabinet. It is the data itself, not the software or hardware.",
+//     why_wrong: "Option (a) describes an application suite. Option (b) describes the DBMS software, not the database. Option (d) is hardware that hosts a database."
+//   },
+//   {
+//     question: "Which SQL clause is used to filter groups of rows that have been aggregated?",
+//     options: { a: "WHERE", b: "HAVING", c: "GROUP BY", d: "ORDER BY" },
+//     answer: "b",
+//     explanation: "HAVING filters results after aggregation. It was added because WHERE cannot work with aggregate functions like COUNT(), SUM(), or AVG().",
+//     why_wrong: "WHERE filters rows before aggregation. GROUP BY organizes rows. ORDER BY only sorts the final output — none of them can filter aggregated groups."
+//   },
+//   {
+//     question: "Which of the following is not an example of DBMS?",
+//     options: { a: "MySQL", b: "Microsoft Access", c: "IBM DB2", d: "Google" },
+//     answer: "d",
+//     explanation: "Google is a technology company and search engine, not a DBMS. While Google builds cloud database tools, 'Google' itself is not a database management system.",
+//     why_wrong: "MySQL, Microsoft Access, and IBM DB2 are all real, purpose-built database management software products."
+//   }
+// ];
 
 // ─── TYPES ────────────────────────────────────────────────────────────────────
 interface Question {
@@ -360,8 +361,8 @@ export default function App() {
 
       {/* Ambient blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full opacity-[0.04]" style={{ background: '#CCFF00', filter: 'blur(100px)' }} />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px] rounded-full opacity-[0.04]" style={{ background: '#00F5FF', filter: 'blur(100px)' }} />
+        <div className="absolute top-[-20%] left-[-10%] w-125 h-125 rounded-full opacity-[0.04]" style={{ background: '#CCFF00', filter: 'blur(100px)' }} />
+        <div className="absolute bottom-[-20%] right-[-10%] w-100 h-100 rounded-full opacity-[0.04]" style={{ background: '#00F5FF', filter: 'blur(100px)' }} />
         {/* Grid */}
         <div className="absolute inset-0 opacity-[0.025]" style={{
           backgroundImage: 'linear-gradient(rgba(204,255,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(204,255,0,1) 1px, transparent 1px)',
@@ -393,7 +394,7 @@ export default function App() {
             <span className="text-[9px] tracking-widest" style={{ color: 'rgba(255,255,255,0.3)' }}>PROGRESS</span>
             <span className="text-[9px]" style={{ color: '#CCFF00' }}>{currentIndex + 1}/{QUESTIONS.length}</span>
           </div>
-          <div className="h-[3px] rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
+          <div className="h-0.75 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
             <div ref={progressFillRef} className="h-full rounded-full" style={{ background: '#CCFF00', width: '0%', boxShadow: '0 0 10px #CCFF00' }} />
           </div>
         </div>
@@ -413,7 +414,7 @@ export default function App() {
 
       {/* Mobile progress */}
       <div className="sm:hidden px-5 pt-3 relative z-10">
-        <div className="h-[2px] rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
+        <div className="h-0.5 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
           <motion.div className="h-full rounded-full" style={{ background: '#CCFF00', boxShadow: '0 0 10px #CCFF00' }} animate={{ width: `${progress}%` }} transition={{ duration: 0.6, ease: 'easeOut' }} />
         </div>
         <div className="flex justify-between mt-1">
@@ -555,7 +556,7 @@ export default function App() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 40 }}
               transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="w-full lg:w-[380px] xl:w-[420px] flex flex-col gap-4 lg:sticky lg:top-6 shrink-0"
+              className="w-full lg:w-95 xl:w-105 flex flex-col gap-4 lg:sticky lg:top-6 shrink-0"
             >
               {/* Result badge */}
               <div
